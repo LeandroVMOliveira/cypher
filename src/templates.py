@@ -1,3 +1,6 @@
+# Data definition:
+
+#  Command-line-argument is one of:
 """
  - options    -- display the current cyphers and decypher available
  - check      -- try discover what type of the cypher is inputed

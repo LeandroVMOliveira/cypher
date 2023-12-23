@@ -2,9 +2,6 @@
 import sys
 
 import requirements
-# Data definition:
-
-#  Command-line-argument is one of:
 
 def main():
     """ensure the correct number of arguments"""
