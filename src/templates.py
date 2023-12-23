@@ -1,15 +1,35 @@
 # Data definition:
 
 #  Command-line-argument is one of:
-"""
- - options    -- display the current cyphers and decypher available
- - check      -- try discover what type of the cypher is inputed
- - help       -- display the istruction to the user
-"""
+
+# - options    -- display the current cyphers and decypher available
+# - check      -- try discover what type of the cypher is inputed
+# - help       -- display the istruction to the user
 #  intrep. utilize commands-line-arguments to return help, options or check function
 
+# main.py -options return options()
+# main.py -check return check()
+# main.py -help return help()
+
+
 # Key is Integer
-# interp. shifts accord to alphabetic letters that means X % 26
+# interp. shifts accord to alphabetic letters, that means X % 26
+
+# keycheck(5) return 5
+# keycheck(-1) return 25
+# keycheck(27) return 1
+
+
+# mode is Integer[1,9]
+# interp. based on the options available to the user to choose with numbers
+
+#- [1] cypher          when the user input the correct number
+#- [2] decypher        an option is selected
+#- [3] exit
+# numcheck(1) return cypher()
+# numcheck(2) return decypher()
+# numcheck(3) return exit()
+
 
 # templates:
 
@@ -46,14 +66,16 @@ def numcheck(beg: int, end: int) -> int:
         except(ValueError):
             print("insert a valid choice")
 
+
 def keycheck(keycap: int) -> int:
-    while(True):
+    while True:
         try:
             key = int(input("Insert the key number: "))
             if(key % keycap >= 0 and key % keycap <= 26):
                 return key % keycap
-        except(ValueError):
+        except ValueError:
             print("Insert a integer")
+
 
 def textcheck() -> str:
     text = None
