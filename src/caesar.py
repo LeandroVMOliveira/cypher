@@ -14,7 +14,7 @@ def main() -> int:
     
     mode = templates.checknum(1,3)
     if mode == 1:
-        #cypher()
+        cypher()
         return 0
     elif mode == 2:
         #decypher()
@@ -23,17 +23,27 @@ def main() -> int:
         return 1
     
 def cypher():
-    key: int = None
-    plaintext: str = None
-    key = int(input("Insert the key number: "))
-    plaintext = input("Inserte the plaintext: ")
-    if(checktext(key,plaintext)):
-        print("Insert the correct type values")
-        cypher()
+    key = None
+    plaintext = None
 
-def checktext(key, text) -> bool:
-    if not key.isdigit or key == 0:
-        return True
-    if not text.isalpha:
-        return True
-    return False
+    key = checkkey()
+    plaintext = checktext()
+    print (key, plaintext.isalpha)
+def checkkey() -> int:
+    while(True):
+        try:
+            key = int(input("Insert the key number: "))
+            if(key % 26 >= 0 and key % 26 <= 26):
+                return key % 26
+        except(ValueError):
+            print("Insert a integer")
+
+def checktext() -> str:
+    text = None
+    while(True):
+        text = input("Insert the plaintext: ")
+        for t in text:
+            if not t.isalpha:
+                print("Only uses alphabetic letters")
+                continue
+        return text
