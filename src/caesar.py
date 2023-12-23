@@ -1,5 +1,5 @@
 
-from requirements import templates
+from src import templates
 
 def main() -> int:
     """Encoder/Decoder of Caesar cypher"""
@@ -21,3 +21,19 @@ def main() -> int:
         return 0
     else:
         return 1
+    
+def cypher():
+    key: int = None
+    plaintext: str = None
+    key = int(input("Insert the key number: "))
+    plaintext = input("Inserte the plaintext: ")
+    if(checktext(key,plaintext)):
+        print("Insert the correct type values")
+        cypher()
+
+def checktext(key, text) -> bool:
+    if not key.isdigit or key == 0:
+        return True
+    if not text.isalpha:
+        return True
+    return False

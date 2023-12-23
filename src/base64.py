@@ -1,4 +1,4 @@
-from requirements import templates
+from src import templates
 
 def main():
     print("base64")

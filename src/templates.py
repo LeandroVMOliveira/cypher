@@ -8,6 +8,9 @@
 """
 #  intrep. utilize commands-line-arguments to return help, options or check function
 
+# Key is Integer
+# interp. shifts accord to alphabetic letters that means X % 26
+
 # templates:
 
 def fn_for_cypher():
