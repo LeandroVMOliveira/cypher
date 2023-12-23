@@ -28,7 +28,7 @@ def cypher():
 
     key = checkkey()
     plaintext = checktext()
-    print (key, plaintext.isalpha)
+    print (key, plaintext)
 def checkkey() -> int:
     while(True):
         try:
@@ -41,9 +41,11 @@ def checkkey() -> int:
 def checktext() -> str:
     text = None
     while(True):
+        test = True
         text = input("Insert the plaintext: ")
-        for t in text:
-            if not t.isalpha:
-                print("Only uses alphabetic letters")
-                continue
-        return text
+        if not text.isalpha():
+            test = False
+        if(test):
+            return text
+        print("Insert only alphabetic letters")
+       
