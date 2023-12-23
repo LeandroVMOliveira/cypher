@@ -23,7 +23,7 @@ def fn_for_cypher():
          \n [2] Decypher\
          \n [3] Exit\
          \n")
-    checknum(1,3)
+    numcheck(1,3)
             
     if mode == 1:
         ...
@@ -34,7 +34,7 @@ def fn_for_cypher():
     
     return 0
     
-def checknum(beg: int, end: int) -> int:
+def numcheck(beg: int, end: int) -> int:
     """Ensures the correct number of answers"""
     while (True):
         try:
@@ -46,5 +46,22 @@ def checknum(beg: int, end: int) -> int:
         except(ValueError):
             print("insert a valid choice")
 
+def keycheck(keycap: int) -> int:
+    while(True):
+        try:
+            key = int(input("Insert the key number: "))
+            if(key % keycap >= 0 and key % keycap <= 26):
+                return key % keycap
+        except(ValueError):
+            print("Insert a integer")
 
-
+def textcheck() -> str:
+    text = None
+    while(True):
+        test = True
+        text = input("Insert the plaintext: ")
+        if not text.isalpha():
+            test = False
+        if(test):
+            return text
+        print("Insert only alphabetic letters")
