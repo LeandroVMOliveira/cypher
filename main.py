@@ -1,5 +1,6 @@
 """Module prividing command-line-argument"""
 import sys
+import string
 
 import requirements
 
@@ -19,7 +20,7 @@ def main():
     return 0
 
 def options():
-    """Dysplay the cyphers"""
+    """Dysplay the ciphers"""
 
 
     print("[1] Caesar\
@@ -28,9 +29,9 @@ def options():
          \n[4] Binary\
          \n[5] Hexadecimal")
     mode = numcheck(1,5)
-    cyphers(mode)
+    ciphers(mode)
     
-def cyphers(n):
+def ciphers(n):
     match n:
         case 1: 
             requirements.caesar.main()
@@ -55,8 +56,8 @@ def check():
 
 def hlp():
     """Manual of the code"""
-    print( "-options    -- Discover all the cyphers available\
-          \n-check      -- make some steps to test if your code is one of the cyphers on the system\
+    print( "-options    -- Discover all the ciphers available\
+          \n-check      -- make some steps to test if your code is one of the ciphers on the system\
           \n-help       -- open the help page")
     return
 

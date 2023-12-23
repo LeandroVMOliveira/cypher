@@ -1,27 +1,27 @@
 
 
 def main() -> int:
-    """Encoder/Decoder of Caesar cypher"""
+    """Encoder/Decoder of Caesar cipher"""
     mode = None
-    print("Welcome to Caesar Cypher/Decypher!\
+    print("Welcome to Caesar cipher/Decipher!\
          \nPlease select the method you want to choose:\
          \n\
-         \n [1] Cypher\
-         \n [2] Decypher\
+         \n [1] cipher\
+         \n [2] Decipher\
          \n [3] Exit\
          \n")
     
     mode = numcheck(1,3)
     if mode == 1:
-        cypher()
+        cipher()
         return 0
     elif mode == 2:
-        #decypher()
+        #decipher()
         return 0
     else:
         return 1
     
-def cypher():
+def cipher():
     key = None
     plaintext = None
 

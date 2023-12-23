@@ -2,8 +2,8 @@
 
 #  Command-line-argument is one of:
 
-# - options    -- display the current cyphers and decypher available
-# - check      -- try discover what type of the cypher is inputed
+# - options    -- display the current ciphers and decipher available
+# - check      -- try discover what type of the cipher is inputed
 # - help       -- display the istruction to the user
 #  intrep. utilize commands-line-arguments to return help, options or check function
 
@@ -23,24 +23,24 @@
 # mode is Integer[1,9]
 # interp. based on the options available to the user to choose with numbers
 
-#- [1] cypher          when the user input the correct number
-#- [2] decypher        an option is selected
+#- [1] cipher          when the user input the correct number
+#- [2] decipher        an option is selected
 #- [3] exit
-# numcheck(1) return cypher()
-# numcheck(2) return decypher()
+# numcheck(1) return cipher()
+# numcheck(2) return decipher()
 # numcheck(3) return exit()
 
 
 # templates:
 
-def fn_for_cypher():
+def fn_for_cipher():
     """Template for base code/decode method"""
     mode = None
-    print("Welcome to Caesar Cypher/Decypher!\
+    print("Welcome to Caesar cipher/Decipher!\
          \nPlease select the method you want to choose:\
          \n\
-         \n [1] Cypher\
-         \n [2] Decypher\
+         \n [1] cipher\
+         \n [2] Decipher\
          \n [3] Exit\
          \n")
     numcheck(1,3)
