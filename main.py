@@ -24,7 +24,7 @@ def options():
 
 
     print("[1] Caesar\
-         \n[2] AZ26\
+         \n[2] A1Z26\
          \n[3] Base64\
          \n[4] Binary\
          \n[5] Hexadecimal")
@@ -37,7 +37,7 @@ def ciphers(n):
             requirements.caesar.main()
             return
         case 2:
-            requirements.az26.main()
+            requirements.a1z26.main()
             return
         case 3:
             requirements.base64.main()
