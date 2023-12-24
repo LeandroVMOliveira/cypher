@@ -1,4 +1,8 @@
+"""The base to form the cipher"""
+import string
 
+ALPHABETLOWER = string.ascii_lowercase
+ALPHABETUPPER = string.ascii_uppercase
 
 def main() -> int:
     """Encoder/Decoder of Caesar cipher"""

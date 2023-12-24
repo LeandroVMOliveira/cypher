@@ -1,6 +1,5 @@
 """Module prividing command-line-argument"""
 import sys
-import string
 
 import requirements
 
@@ -32,6 +31,7 @@ def options():
     ciphers(mode)
     
 def ciphers(n):
+    """Receives a numbers and select a function placed in that number"""
     match n:
         case 1: 
             requirements.caesar.main()
@@ -50,6 +50,7 @@ def ciphers(n):
             return
 
 def check():
+    """Show all possibilities to decode"""
     print("Insert the code:")
     return
 

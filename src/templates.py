@@ -11,16 +11,20 @@
 # main.py -check return check()
 # main.py -help return help()
 
+# def fn_for_cla(option):
+#return option()
+
+
 
 # Key is Integer
-# interp. shifts accord to alphabetic letters, that means X % 26
+# interp. shifts accord to alphabetic letters, that means key % possibilities
 
-# keycheck(5) return 5
-# keycheck(-1) return 25
-# keycheck(27) return 1
+# keycheck(5) return 5     5 % 26
+# keycheck(-1) return 25  -1 % 26
+# keycheck(27) return 1    27 % 26
 
 
-# mode is Integer[1,9]
+# cypher is Integer[1,9]
 # interp. based on the options available to the user to choose with numbers
 
 #- [1] cipher          when the user input the correct number
@@ -29,6 +33,9 @@
 # numcheck(1) return cipher()
 # numcheck(2) return decipher()
 # numcheck(3) return exit()
+
+# def fn-for-cypher(n)
+# return n function()
 
 
 # templates:
