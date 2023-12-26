@@ -65,7 +65,7 @@ def numcheck(beg: int, end: int) -> int:
     """Ensures the correct number of answers"""
     while (True):
         try:
-            mode = int(input(" "))
+            mode = int(input("Please select the method you want to choose: "))
             if(mode >= beg and mode  <= end):
                 return mode
             print("insert a valid choice")
@@ -85,6 +85,7 @@ def keycheck(keycap: int) -> int:
 
 
 def textcheck() -> str:
+    """Ensure tha only alphabetics letters are used"""
     text = None
     while(True):
         test = True
