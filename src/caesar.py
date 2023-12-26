@@ -26,20 +26,22 @@ def main() -> int:
             cipher(key, plaintext)
             return 0
         else:
-            #decipher()
+            decipher(key, plaintext)
             return 0
     else:
         return 1
     
 def cipher(key, text):
-    
-
-    print (key, text)
+    alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
+    table = str.maketrans(ALPHABETLOWER, alphabetshift)
+    print(text.translate(table))
+    return
 
 def decipher(key, text):
-    
-
-    print (key, text)
+    alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
+    table = str.maketrans(alphabetshift, ALPHABETLOWER)
+    print(text.translate(table))
+    return
 
 
 def numcheck(beg: int, end: int) -> int:
@@ -64,12 +66,13 @@ def keycheck(keycap: int) -> int:
             print("Insert a integer")
 
 def textcheck() -> str:
+    """Ensure tha only alphabetics letters are used"""
     text = None
     while(True):
         test = True
         text = input("Insert the plaintext: ")
-        if not text.isascii():
+        if not text.isalpha():
             test = False
         if(test):
             return text
-        print("Insert only ascii letters")
+        print("Insert only alphabetic letters")
