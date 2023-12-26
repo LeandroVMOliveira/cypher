@@ -66,7 +66,7 @@ def numcheck(beg: int, end: int) -> int:
     """Ensures the correct number of answers"""
     while (True):
         try:
-            mode = int(input(" "))
+            mode = int(input("Please select the cipher you want to choose: "))
             if(mode >= beg and mode  <= end):
                 return mode
             print("insert a valid choice")

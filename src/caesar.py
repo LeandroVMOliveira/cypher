@@ -8,37 +8,45 @@ def main() -> int:
     """Encoder/Decoder of Caesar cipher"""
     mode = None
     print("Welcome to Caesar cipher/Decipher!\
-         \nPlease select the method you want to choose:\
          \n\
          \n [1] cipher\
          \n [2] Decipher\
          \n [3] Exit\
-         \n")
+        \n")
     
     mode = numcheck(1,3)
-    if mode == 1:
-        cipher()
-        return 0
-    elif mode == 2:
-        #decipher()
-        return 0
+    key: int = None
+    plaintext: str = None
+    if mode == 1 or mode == 2:
+        
+        key = keycheck(26)
+        plaintext = textcheck()
+
+        if mode == 1:
+            cipher(key, plaintext)
+            return 0
+        else:
+            #decipher()
+            return 0
     else:
         return 1
     
-def cipher():
-    key = None
-    plaintext = None
+def cipher(key, text):
+    
 
-    key = keycheck(26)
-    plaintext = textcheck()
-    print (key, plaintext)
+    print (key, text)
+
+def decipher(key, text):
+    
+
+    print (key, text)
 
 
 def numcheck(beg: int, end: int) -> int:
     """Ensures the correct number of answers"""
     while (True):
         try:
-            mode = int(input(" "))
+            mode = int(input("Please select the method you want to choose: "))
             if(mode >= beg and mode  <= end):
                 return mode
             print("insert a valid choice")
@@ -60,8 +68,8 @@ def textcheck() -> str:
     while(True):
         test = True
         text = input("Insert the plaintext: ")
-        if not text.isalpha():
+        if not text.isascii():
             test = False
         if(test):
             return text
-        print("Insert only alphabetic letters")
+        print("Insert only ascii letters")
