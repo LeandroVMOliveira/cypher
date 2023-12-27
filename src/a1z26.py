@@ -62,11 +62,18 @@ def digitcheck() -> str:
     
 
 def cipher(text):
-    table = str.maketrans(ALPHABETLOWER, numbers)
-    print(text.translate(table))
+    for t in text:
+        digit = ord(t )- ord("a") + 1
+        if digit < 10:
+            print(f"{digit:02d}", end="")
+        else:
+            print(digit, end="")
     return
 
 def decipher(text):
-    table = str.maketrans(numbers, ALPHABETLOWER)
-    print(text.translate(table))
+    # for n in range(len(text -1))
+    #    text[n:n+1]
+    #   (text[n])
+    # else:
+    #   
     return
