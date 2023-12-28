@@ -9,7 +9,6 @@ def main():
     """Template for base code/decode method"""
     mode = None
     print("Welcome to A1Z26 cipher/Decipher!\
-         \nPlease select the method you want to choose:\
          \n\
          \n [1] cipher\
          \n [2] Decipher\
@@ -53,12 +52,12 @@ def digitcheck() -> str:
     text = None
     while(True):
         test = True
-        text = input("Insert the plaintext: ")
+        text = (input("Insert the ciphertext: "))
         if not text.isdigit():
             test = False
         if(test):
             return text
-        print("Insert only alphabetic letters")
+        print("Insert only digits")
     
 
 def cipher(text):
@@ -71,9 +70,8 @@ def cipher(text):
     return
 
 def decipher(text):
-    # for n in range(len(text -1))
-    #    text[n:n+1]
-    #   (text[n])
-    # else:
-    #   
+    for n, m in zip(text[0::2], text[1::2]) :
+        
+        total = int(n+m)+ ord("a") - 1
+        print(chr(total), end="")
     return

@@ -44,7 +44,6 @@ def fn_for_cipher():
     """Template for base code/decode method"""
     mode = None
     print("Welcome to Caesar cipher/Decipher!\
-         \nPlease select the method you want to choose:\
          \n\
          \n [1] cipher\
          \n [2] Decipher\
@@ -95,3 +94,16 @@ def textcheck() -> str:
         if(test):
             return text
         print("Insert only alphabetic letters")
+
+
+def digitcheck() -> str:
+    """Ensure tha only digits are used"""
+    text = None
+    while(True):
+        test = True
+        text = (input("Insert the ciphertext: "))
+        if not text.isdigit():
+            test = False
+        if(test):
+            return text
+        print("Insert only digits")
