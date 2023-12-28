@@ -1,6 +1,6 @@
 """Module prividing command-line-argument"""
 import sys
-
+from src import templates
 import requirements
 
 def main():
@@ -27,7 +27,7 @@ def options():
          \n[3] Base64\
          \n[4] Binary\
          \n[5] Hexadecimal")
-    mode = numcheck(1,5)
+    mode = templates.numcheck(1,5)
     ciphers(mode)
     
 def ciphers(n):
@@ -61,19 +61,6 @@ def hlp():
           \n-check      -- make some steps to test if your code is one of the ciphers on the system\
           \n-help       -- open the help page")
     return
-
-def numcheck(beg: int, end: int) -> int:
-    """Ensures the correct number of answers"""
-    while (True):
-        try:
-            mode = int(input("Please select the cipher you want to choose: "))
-            if(mode >= beg and mode  <= end):
-                return mode
-            print("insert a valid choice")
-
-        except(ValueError):
-            print("insert a valid choice")
-
 
 
 main()
