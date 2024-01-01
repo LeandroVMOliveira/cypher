@@ -10,7 +10,7 @@ ALPHABETUPPER = string.ascii_uppercase
 def main() -> int:
     """Encoder/Decoder of Caesar cipher"""
     mode = None
-    print("Welcome to Caesar cipher/Decipher!\
+    print("Welcome to Caesar Cipher/Decipher!\
          \n\
          \n [1] cipher\
          \n [2] Decipher\

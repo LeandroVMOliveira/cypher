@@ -8,7 +8,7 @@ numbers = str(range(1,27))
 def main():
     """Template for base code/decode method"""
     mode = None
-    print("Welcome to A1Z26 cipher/Decipher!\
+    print("Welcome to A1Z26 Cipher/Decipher!\
          \n\
          \n [1] cipher\
          \n [2] Decipher\

@@ -43,7 +43,7 @@
 def fn_for_cipher():
     """Template for base code/decode method"""
     mode = None
-    print("Welcome to Caesar cipher/Decipher!\
+    print("Welcome to ... Cipher/Decipher!\
          \n\
          \n [1] cipher\
          \n [2] Decipher\
