@@ -107,3 +107,29 @@ def digitcheck() -> str:
         if(test):
             return text
         print("Insert only digits")
+
+def binarycheck() -> str:
+    """Ensure tha only binary digits are used"""
+    bina = None
+    while(True):
+        test = True
+        bina = (input("Insert the ciphertext: "))
+        for b in bina:
+            if b not in ("1", "0", " "):
+                test = False
+        if(test):
+            return bina
+        print("Insert only binary digits")
+
+def hexcheck() -> str:
+    """Ensure tha only hexadecimal digits are used"""
+    hexa = None
+    while(True):
+        test = True
+        hexa = (input("Insert the ciphertext: "))
+        for h in hexa:
+            if h not in ("a", "b", " ") :
+                test = False
+        if(test):
+            return hexa
+        print("Insert only hexadecimal digits")

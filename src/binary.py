@@ -15,18 +15,18 @@ def main():
     if mode == 1:
         cipher()
     elif mode == 2:
-        ...
+        decipher()
     elif mode == 3:
         ...
     
     return 0
 
 def cipher():
-    
+    """Takes a data type option to convert to binary"""
     print("Select the data type\
          \n\
          \n [1] Text\
-         \n [2] integers\
+         \n [2] Decimal\
          \n [3] hex\
          \n [4] exit\
          \n")
@@ -36,19 +36,53 @@ def cipher():
         text = templates.textcheck()
         for t in text:
             t = int(ord(t))
-            t = bin(t)
-            t = int(t[2:])
+            t = bin(t)[2:]
+            t = int(t)
             print(f"{t:08d}", end=" ")
         return
     elif data == 2:
         number = templates.digitcheck()
         number = int(number)
-        number = bin(number)  
-        number = int(number[2:])   
-        print(f"{number:032d}")
+        number = bin(number)[2:]
+        number = int(number)
+        print(f"{number:04d}")
         return
     elif data == 3:
         #templates.hexcheck()
+        return
+    else:
+        return
+    
+
+def decipher():
+    """Takes a binary to convert to a data type option"""
+    print("Select the data type\
+         \n\
+         \n [1] Text\
+         \n [2] Decimal\
+         \n [3] hex\
+         \n [4] exit\
+         \n")
+    data = templates.numcheck(1,4)
+            
+    if data == 1:
+        hashdata = list()
+        text = templates.binarycheck()
+        hashdata = text.split(" ")
+        for h in hashdata:
+            print(chr(int(h, 2)), end="")
+        
+        return
+    elif data == 2:
+        hashdata = list()
+        text = templates.binarycheck()
+        hashdata = text.split(" ")
+        for h in hashdata:
+            print(int(h, 2), end="")
+
+        return
+    elif data == 3:
         ...
+        return
     else:
         return

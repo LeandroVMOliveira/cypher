@@ -35,12 +35,14 @@ def main() -> int:
         return 1
     
 def cipher(key, text):
+    """Takes a key and a plaintext to generate the ciphertext"""
     alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
     table = str.maketrans(ALPHABETLOWER, alphabetshift)
     print(text.translate(table))
     return
 
 def decipher(key, text):
+    """Takes a key and a ciphertext to generate the plaintext"""
     alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
     table = str.maketrans(alphabetshift, ALPHABETLOWER)
     print(text.translate(table))
