@@ -40,6 +40,10 @@
 
 # templates:
 
+import string
+
+HEXDECIMAL = string.hexdigits + " "
+
 def fn_for_cipher():
     """Template for base code/decode method"""
     mode = None
@@ -49,7 +53,7 @@ def fn_for_cipher():
          \n [2] Decipher\
          \n [3] Exit\
          \n")
-    numcheck(1,3)
+    mode = numcheck(1,3)
             
     if mode == 1:
         ...
@@ -102,7 +106,7 @@ def digitcheck() -> str:
     while(True):
         test = True
         text = (input("Insert the ciphertext: "))
-        if not text.isdigit():
+        if not text.isdigit() or not text.isspace():
             test = False
         if(test):
             return text
@@ -128,7 +132,7 @@ def hexcheck() -> str:
         test = True
         hexa = (input("Insert the ciphertext: "))
         for h in hexa:
-            if h not in ("a", "b", " ") :
+            if h not in HEXDECIMAL :
                 test = False
         if(test):
             return hexa

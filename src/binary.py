@@ -48,7 +48,7 @@ def cipher():
         print(f"{number:04d}")
         return
     elif data == 3:
-        #templates.hexcheck()
+        templates.hexcheck()
         return
     else:
         return
@@ -68,6 +68,7 @@ def decipher():
     if data == 1:
         hashdata = list()
         text = templates.binarycheck()
+        text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
             print(chr(int(h, 2)), end="")
@@ -76,6 +77,7 @@ def decipher():
     elif data == 2:
         hashdata = list()
         text = templates.binarycheck()
+        text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
             print(int(h, 2), end="")
