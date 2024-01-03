@@ -43,6 +43,10 @@
 import string
 
 HEXDECIMAL = string.hexdigits + " "
+ALPHABETLOWER = string.ascii_lowercase
+ALPHABETUPPER = string.ascii_uppercase
+DIGITS = string.digits
+basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
 
 def fn_for_cipher():
     """Template for base code/decode method"""
@@ -93,8 +97,9 @@ def textcheck() -> str:
     while(True):
         test = True
         text = input("Insert the plaintext: ")
-        if not text.isalpha():
-            test = False
+        for t in text:
+            if not t in basealphabet:
+                test = False
         if(test):
             return text
         print("Insert only alphabetic letters")

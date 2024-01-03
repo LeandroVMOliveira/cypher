@@ -6,6 +6,7 @@ from src import templates
 
 ALPHABETLOWER = string.ascii_lowercase
 ALPHABETUPPER = string.ascii_uppercase
+DIGITS = string.digits
 
 def main() -> int:
     """Encoder/Decoder of Caesar cipher"""
@@ -36,14 +37,20 @@ def main() -> int:
     
 def cipher(key, text):
     """Takes a key and a plaintext to generate the ciphertext"""
-    alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
-    table = str.maketrans(ALPHABETLOWER, alphabetshift)
+    alphabetshiftlower = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
+    alphabetshiftupper = ALPHABETUPPER[key:] + ALPHABETUPPER[:key]
+    alphabetshift = alphabetshiftlower + alphabetshiftupper + DIGITS + " "
+    basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+    table = str.maketrans(basealphabet, alphabetshift)
     print(text.translate(table))
     return
 
 def decipher(key, text):
     """Takes a key and a ciphertext to generate the plaintext"""
-    alphabetshift = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
-    table = str.maketrans(alphabetshift, ALPHABETLOWER)
+    alphabetshiftlower = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
+    alphabetshiftupper = ALPHABETUPPER[key:] + ALPHABETUPPER[:key]
+    alphabetshift = alphabetshiftlower + alphabetshiftupper + " "
+    basealphabet = ALPHABETLOWER + ALPHABETUPPER + " "
+    table = str.maketrans(alphabetshift, basealphabet)
     print(text.translate(table))
     return
