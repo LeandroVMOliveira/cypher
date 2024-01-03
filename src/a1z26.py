@@ -28,11 +28,22 @@ def main():
 
 def cipher(text):
     for t in text:
-        digit = ord(t )- ord("a") + 1
-        if digit < 10:
-            print(f"{digit:02d}", end="")
+        if t.islower():
+            digit = ord(t )- ord("a") + 1
+            if digit < 10:
+                print(f"{digit:02d}", end="")
+            else:
+                print(digit, end="")
+        elif t.isupper():
+            digit = ord(t )- ord("A") + 1
+            if digit < 10:
+                print(f"{digit:02d}", end="")
+            else:
+                print(digit, end="")
+        elif t.isdigit():
+            print(t, end="")
         else:
-            print(digit, end="")
+            print(t, end=" ")
     return
 
 def decipher(text):
