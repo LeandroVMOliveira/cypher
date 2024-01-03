@@ -41,14 +41,20 @@ def cipher(text):
             else:
                 print(digit, end="")
         elif t.isdigit():
-            print(t, end="")
+            print("", end="")
         else:
             print(t, end=" ")
     return
 
 def decipher(text):
-    for n, m in zip(text[0::2], text[1::2]) :
-        
-        total = int(n+m)+ ord("a") - 1
-        print(chr(total), end="")
+    hashdata = list()
+    
+    text = text.strip()
+    hashdata = text.split(" ")
+    for h in hashdata:
+        for n, m in zip(h[0::2], h[1::2]) :
+                
+            total = int(n+m)+ ord("A") - 1
+            print(chr(total), end="")
+        print(" ", end="")
     return

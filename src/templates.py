@@ -45,7 +45,7 @@ import string
 HEXDECIMAL = string.hexdigits + " "
 ALPHABETLOWER = string.ascii_lowercase
 ALPHABETUPPER = string.ascii_uppercase
-DIGITS = string.digits
+DIGITS = string.digits + " "
 basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
 
 def fn_for_cipher():
@@ -111,8 +111,9 @@ def digitcheck() -> str:
     while(True):
         test = True
         text = (input("Insert the ciphertext: "))
-        if not text.isdigit() or not text.isspace():
-            test = False
+        for t in text:
+            if not t in DIGITS:
+                test = False
         if(test):
             return text
         print("Insert only digits")
