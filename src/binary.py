@@ -48,7 +48,9 @@ def cipher():
         print(f"{number:04d}")
         return
     elif data == 3:
-        templates.hexcheck()
+        bina = templates.binarycheck()
+        bina = int(bina, base=2)
+        print(hex(bina)[2:])
         return
     else:
         return
@@ -84,7 +86,13 @@ def decipher():
 
         return
     elif data == 3:
-        ...
+        hashdata = list()
+        hexa = templates.hexcheck()
+        hexa = hexa.strip()
+        hashdata = hexa.split(" ")
+        for h in hashdata:
+            h = int("0x" + h, base=16)
+            print(bin(h)[2:], end=" ")
         return
     else:
         return
