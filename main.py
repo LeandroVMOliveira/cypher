@@ -22,12 +22,17 @@ def options():
     """Dysplay the ciphers"""
 
 
-    print("[1] Caesar\
-         \n[2] A1Z26\
-         \n[3] Base64\
-         \n[4] Binary\
-         \n[5] Hexadecimal")
-    mode = templates.numcheck(1,5)
+    print("""
+[1] Caesar
+[2] A1Z26
+[3] Base64
+[4] Binary
+[5] Hexadecimal
+[6] Morse
+[7] Vigenère
+[8] Substitution
+""")
+    mode = templates.numcheck(1,8)
     ciphers(mode)
     
 def ciphers(n: int):
@@ -48,6 +53,16 @@ def ciphers(n: int):
         case 5:
             requirements.hex.main()
             return
+        case 6:
+            requirements.hex.main()
+            return
+        case 7:
+            requirements.hex.main()
+            return
+        case 8:
+            requirements.hex.main()
+            return
+        
     return 0
 
 def check():
