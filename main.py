@@ -1,4 +1,4 @@
-"""Module prividing command-line-argument"""
+"""Module providing command-line-argument"""
 import sys
 from src import templates
 import requirements
@@ -30,10 +30,10 @@ def options():
     mode = templates.numcheck(1,5)
     ciphers(mode)
     
-def ciphers(n):
+def ciphers(n: int):
     """Receives a numbers and select a function placed in that number"""
     match n:
-        case 1: 
+        case 1:
             requirements.caesar.main()
             return
         case 2:
@@ -48,6 +48,7 @@ def ciphers(n):
         case 5:
             requirements.hex.main()
             return
+    return 0
 
 def check():
     """Show all possibilities to decode"""
@@ -57,9 +58,25 @@ def check():
 
 def hlp():
     """Manual of the code"""
-    print( "-options    -- Discover all the ciphers available\
-          \n-check      -- make some steps to test if your code is one of the ciphers on the system\
-          \n-help       -- open the help page")
+    print("""
+-options    -- Show all the ciphers available:
+          
+    Working:     
+        Caesar
+        A1Z26
+        Base64 (32, 64, 85)
+        Binary
+        Hexadecimal
+          
+    On development:             
+        Vigenère cipher
+        Substitution cipher
+        Morse
+          
+-check      -- make some steps to test if your code is one of the ciphers on the system
+
+-help       -- open the help page
+""")
     return
 
 
