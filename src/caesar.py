@@ -15,7 +15,8 @@ def main() -> int:
          \n\
          \n [1] cipher\
          \n [2] Decipher\
-         \n [3] Exit\
+         \n [3] All keys\
+         \n [4] Exit\
         \n")
     
     mode = templates.numcheck(1,3)
@@ -32,6 +33,12 @@ def main() -> int:
         else:
             decipher(key, plaintext)
             return 0
+    elif mode == 3:
+        key = range(0,26)
+        plaintext = templates.textcheck()
+        for k in key:
+            cipher(k,plaintext)
+        return 0
     else:
         return 1
     
@@ -42,7 +49,7 @@ def cipher(key, text):
     alphabetshift = alphabetshiftlower + alphabetshiftupper + DIGITS + " "
     basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
     table = str.maketrans(basealphabet, alphabetshift)
-    print(text.translate(table))
+    print(f"Key {key}: {text.translate(table)}")
     return
 
 def decipher(key, text):
@@ -52,5 +59,5 @@ def decipher(key, text):
     alphabetshift = alphabetshiftlower + alphabetshiftupper + " "
     basealphabet = ALPHABETLOWER + ALPHABETUPPER + " "
     table = str.maketrans(alphabetshift, basealphabet)
-    print(text.translate(table))
+    print(f"Key {key}: {text.translate(table)}")
     return

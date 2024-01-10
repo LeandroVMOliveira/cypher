@@ -43,10 +43,23 @@
 import string
 
 HEXDECIMAL = string.hexdigits + " "
+
+DIGITS = string.digits + " "
+
 ALPHABETLOWER = string.ascii_lowercase
 ALPHABETUPPER = string.ascii_uppercase
-DIGITS = string.digits + " "
-basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+BASEALPHABET = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+
+morse = {"A" : ".-", "B" : "-...", "C" : "-.-.", "D" : "-..",
+        "E" : ".", "F" : "..-.", "G" : "--.", "H" : "....",
+        "I" : "..", "J" : ".---", "K" : "-.-", "L" : ".-..",
+        "M" : "--", "N" : "-.", "O" : "---", "P" : ".--.",
+        "Q" : "--.-", "R" : ".-.", "S" : "...", "T" : "-",
+        "U" : "..-", "V" : "...-", "W" : ".--", "X" : "-..-",
+        "Y" : "-.--", "Z" : "--..", "0" : "-----", "1" : ".----",
+        "2" : "..---", "3" : "...--", "4" : "....-", "5" : ".....",
+        "6" : "-....", "7" : "--...", "8" : "---..", "9" : "----.",}
+        
 
 def fn_for_cipher():
     """Template for base code/decode method"""
@@ -98,7 +111,7 @@ def textcheck() -> str:
         test = True
         text = input("Insert the plaintext: ")
         for t in text:
-            if not t in basealphabet:
+            if not t in BASEALPHABET:
                 test = False
         if(test):
             return text

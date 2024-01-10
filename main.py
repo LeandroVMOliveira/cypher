@@ -10,8 +10,6 @@ def main():
 
     if sys.argv[1] == "-options":
         options()
-    elif sys.argv[1] == "-check":
-        check()
     elif sys.argv[1] == "-help":
         hlp()
     else:
@@ -54,21 +52,16 @@ def ciphers(n: int):
             requirements.hex.main()
             return
         case 6:
-            requirements.hex.main()
+            requirements.morse.main()
             return
         case 7:
-            requirements.hex.main()
+            requirements.substitution.main()
             return
         case 8:
-            requirements.hex.main()
+            requirements.vigenere.main()
             return
         
     return 0
-
-def check():
-    """Show all possibilities to decode"""
-    print("Insert the code:")
-    return
 
 
 def hlp():
@@ -84,11 +77,9 @@ def hlp():
         Hexadecimal
           
     On development:             
-        Vigenère cipher
-        Substitution cipher
-        Morse
-          
--check      -- make some steps to test if your code is one of the ciphers on the system
+        Vigenère cipher 2
+        Substitution cipher 1
+        Morse 3
 
 -help       -- open the help page
 """)
