@@ -1,8 +1,11 @@
-from src import templates
+"A1Z26 Encoder/Decoder ..."
+
 import string
+from src import templates
+
 
 ALPHABETLOWER = string.ascii_lowercase
-numbers = str(range(1,27))
+
 
 
 def main():
@@ -16,10 +19,10 @@ def main():
          \n")
     mode = templates.numcheck(1,3)
     if mode == 1:
-        text = templates.textcheck()
+        text = templates.inputcheck(templates.BASEALPHABET)
         cipher(text)
     elif mode == 2:
-        digits = templates.digitcheck()
+        digits = templates.inputcheck(templates.A1Z26)
         decipher(digits)
     return 0
 
@@ -27,6 +30,7 @@ def main():
     
 
 def cipher(text):
+    "Transform alphabetic lettters in numbers accordely by it's position. Ex: a = 1, i = 9, z = 26"
     for t in text:
         if t.islower():
             digit = ord(t )- ord("a") + 1
@@ -47,10 +51,13 @@ def cipher(text):
     return
 
 def decipher(text):
+    "transform the numbers on alphabetc letters on a range of 1 to 26. "
     hashdata = list()
     
     text = text.strip()
     hashdata = text.split(" ")
+
+    ...
     for h in hashdata:
         for n, m in zip(h[0::2], h[1::2]) :
                 

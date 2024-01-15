@@ -1,4 +1,10 @@
+
+import string
 from src import templates
+
+
+
+
 
 
 def main():
@@ -33,24 +39,30 @@ def cipher():
     data = templates.numcheck(1,4)
             
     if data == 1:
-        text = templates.textcheck()
+        text = templates.inputcheck(templates.BASEALPHABET)
         for t in text:
             t = int(ord(t))
             t = bin(t)[2:]
             t = int(t)
             print(f"{t:08d}", end=" ")
+        print()
         return
     elif data == 2:
-        number = templates.digitcheck()
+        number = templates.inputcheck(templates.DIGITS)
         number = int(number)
         number = bin(number)[2:]
         number = int(number)
         print(f"{number:04d}")
+        
         return
     elif data == 3:
-        bina = templates.binarycheck()
-        bina = int(bina, base=2)
-        print(hex(bina)[2:])
+        hashdata = list()
+        hexa = templates.inputcheck(templates.HEXDECIMAL)
+        hexa = hexa.strip()
+        hashdata = hexa.split(" ")
+        for h in hashdata:
+            h = int("0x" + h, base=2)
+            print(bin(h)[2:], end=" ")
         return
     else:
         return
@@ -69,30 +81,26 @@ def decipher():
             
     if data == 1:
         hashdata = list()
-        text = templates.binarycheck()
+        text = templates.inputcheck(templates.BINARY)
         text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
             print(chr(int(h, 2)), end="")
-        
+        print() 
         return
     elif data == 2:
         hashdata = list()
-        text = templates.binarycheck()
+        text = templates.inputcheck(templates.BINARY)
         text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
             print(int(h, 2), end="")
-
+        print()
         return
     elif data == 3:
-        hashdata = list()
-        hexa = templates.hexcheck()
-        hexa = hexa.strip()
-        hashdata = hexa.split(" ")
-        for h in hashdata:
-            h = int("0x" + h, base=16)
-            print(bin(h)[2:], end=" ")
+        bina = templates.inputcheck(templates.BINARY)
+        bina = int(bina, base=2)
+        print(hex(bina)[2:])
         return
     else:
         return

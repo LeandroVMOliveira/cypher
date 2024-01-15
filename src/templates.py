@@ -46,9 +46,16 @@ HEXDECIMAL = string.hexdigits + " "
 
 DIGITS = string.digits + " "
 
+BINARY = ["1", "0", " "]
+
 ALPHABETLOWER = string.ascii_lowercase
 ALPHABETUPPER = string.ascii_uppercase
-BASEALPHABET = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+BASEALPHABET = ALPHABETLOWER + ALPHABETUPPER + " "
+ALPHANUMERIC = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+
+A1Z26 = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"
+        , "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
+        , "21", "22", "23", "24", "25", "26"]
 
 morse = {"A" : ".-", "B" : "-...", "C" : "-.-.", "D" : "-..",
         "E" : ".", "F" : "..-.", "G" : "--.", "H" : "....",
@@ -58,7 +65,7 @@ morse = {"A" : ".-", "B" : "-...", "C" : "-.-.", "D" : "-..",
         "U" : "..-", "V" : "...-", "W" : ".--", "X" : "-..-",
         "Y" : "-.--", "Z" : "--..", "0" : "-----", "1" : ".----",
         "2" : "..---", "3" : "...--", "4" : "....-", "5" : ".....",
-        "6" : "-....", "7" : "--...", "8" : "---..", "9" : "----.",}
+        "6" : "-....", "7" : "--...", "8" : "---..", "9" : "----."}
         
 
 def fn_for_cipher():
@@ -104,55 +111,15 @@ def keycheck(keycap: int) -> int:
             print("Insert a integer")
 
 
-def textcheck() -> str:
+def inputcheck(checker) -> str:
     """Ensure tha only alphabetics letters are used"""
     text = None
     while(True):
         test = True
         text = input("Insert the plaintext: ")
         for t in text:
-            if not t in BASEALPHABET:
+            if not t in checker:
                 test = False
         if(test):
             return text
         print("Insert only alphabetic letters")
-
-
-def digitcheck() -> str:
-    """Ensure tha only digits are used"""
-    text = None
-    while(True):
-        test = True
-        text = (input("Insert the ciphertext: "))
-        for t in text:
-            if not t in DIGITS:
-                test = False
-        if(test):
-            return text
-        print("Insert only digits")
-
-def binarycheck() -> str:
-    """Ensure tha only binary digits are used"""
-    bina = None
-    while(True):
-        test = True
-        bina = (input("Insert the ciphertext: "))
-        for b in bina:
-            if b not in ("1", "0", " "):
-                test = False
-        if(test):
-            return bina
-        print("Insert only binary digits")
-
-def hexcheck() -> str:
-    """Ensure tha only hexadecimal digits are used"""
-    hexa = None
-    while(True):
-        test = True
-        hexa = (input("Insert the ciphertext: "))
-        for h in hexa:
-            if h not in HEXDECIMAL :
-                test = False
-        if(test):
-            return hexa
-        print("Insert only hexadecimal digits")

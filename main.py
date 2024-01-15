@@ -55,10 +55,10 @@ def ciphers(n: int):
             requirements.morse.main()
             return
         case 7:
-            requirements.substitution.main()
+            requirements.vigenere.main()
             return
         case 8:
-            requirements.vigenere.main()
+            requirements.substitution.main()
             return
         
     return 0
