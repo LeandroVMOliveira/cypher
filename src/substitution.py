@@ -1,8 +1,7 @@
-import string
 
 from src import templates
 
-ALPHABETUPPER = string.ascii_uppercase + " "
+
 
 def main():
     """Template for base code/decode method"""
@@ -21,7 +20,7 @@ def main():
         
         if len(set(cipheralphabet)) == len(cipheralphabet):
             plaintext = templates.inputcheck(templates.BASEALPHABET)
-            table = str.maketrans(ALPHABETUPPER, cipheralphabet)
+            table = str.maketrans(templates.ALPHABETUPPER + " ", cipheralphabet)
             print(f" {plaintext.translate(table)}")
         else:
             print("aaa")
@@ -29,7 +28,7 @@ def main():
     elif mode == 2:
         cipheralphabet = input("insert 26 caracters: ") + " "
         plaintext = templates.inputcheck(templates.BASEALPHABET)
-        table = str.maketrans(cipheralphabet, ALPHABETUPPER)
+        table = str.maketrans(cipheralphabet, templates.ALPHABETUPPER + " ")
         print(f" {plaintext.translate(table)}")
 
     elif mode == 3:

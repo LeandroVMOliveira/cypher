@@ -1,10 +1,9 @@
 "A1Z26 Encoder/Decoder ..."
 
-import string
 from src import templates
 
 
-ALPHABETLOWER = string.ascii_lowercase
+
 
 
 

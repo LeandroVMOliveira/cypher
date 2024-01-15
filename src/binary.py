@@ -1,10 +1,5 @@
 
-import string
 from src import templates
-
-
-
-
 
 
 def main():

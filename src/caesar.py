@@ -1,12 +1,9 @@
 """The base to form the cipher"""
-import string
+
 
 from src import templates
 
 
-ALPHABETLOWER = string.ascii_lowercase
-ALPHABETUPPER = string.ascii_uppercase
-DIGITS = string.digits
 
 def main() -> int:
     """Encoder/Decoder of Caesar cipher"""
@@ -44,20 +41,20 @@ def main() -> int:
     
 def cipher(key, text):
     """Takes a key and a plaintext to generate the ciphertext"""
-    alphabetshiftlower = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
-    alphabetshiftupper = ALPHABETUPPER[key:] + ALPHABETUPPER[:key]
-    alphabetshift = alphabetshiftlower + alphabetshiftupper + DIGITS + " "
-    basealphabet = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
+    alphabetshiftlower = templates.ALPHABETLOWER[key:] + templates.ALPHABETLOWER[:key]
+    alphabetshiftupper = templates.ALPHABETUPPER[key:] + templates.ALPHABETUPPER[:key]
+    alphabetshift = alphabetshiftlower + alphabetshiftupper + templates.DIGITS + " "
+    basealphabet = templates.ALPHANUMERIC
     table = str.maketrans(basealphabet, alphabetshift)
     print(f"Key {key}: {text.translate(table)}")
     return
 
 def decipher(key, text):
     """Takes a key and a ciphertext to generate the plaintext"""
-    alphabetshiftlower = ALPHABETLOWER[key:] + ALPHABETLOWER[:key]
-    alphabetshiftupper = ALPHABETUPPER[key:] + ALPHABETUPPER[:key]
+    alphabetshiftlower = templates.ALPHABETLOWER[key:] + templates.ALPHABETLOWER[:key]
+    alphabetshiftupper = templates.ALPHABETUPPER[key:] + templates.ALPHABETUPPER[:key]
     alphabetshift = alphabetshiftlower + alphabetshiftupper + " "
-    basealphabet = ALPHABETLOWER + ALPHABETUPPER + " "
+    basealphabet = templates.ALPHANUMERIC
     table = str.maketrans(alphabetshift, basealphabet)
     print(f"Key {key}: {text.translate(table)}")
     return
