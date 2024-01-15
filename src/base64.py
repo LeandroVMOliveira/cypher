@@ -34,19 +34,19 @@ def cipher():
     mode = templates.numcheck(1,3)
             
     if mode == 1:
-        text = templates.textcheck()
+        text = templates.inputcheck(templates.BASEALPHABET)
         result = base64.b32encode(bytes(text, 'utf-8'))
         result_string = result.decode('utf-8')
         print(result_string)
         return
     elif mode == 2:
-        text = templates.textcheck()
+        text = templates.inputcheck(templates.BASEALPHABET)
         result = base64.b64encode(bytes(text, 'utf-8'))
         result_string = result.decode('utf-8')
         print(result_string)
         return
     elif mode == 3:
-        text = templates.textcheck()
+        text = templates.inputcheck(templates.BASEALPHABET)
         result = base64.b85encode(bytes(text, 'utf-8'))
         result_string = result.decode('utf-8')
         print(result_string)
