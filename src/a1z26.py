@@ -37,16 +37,23 @@ def cipher(text):
                 print(f"{digit:02d}", end="")
             else:
                 print(digit, end="")
+
         elif t.isupper():
             digit = ord(t )- ord("A") + 1
             if digit < 10:
                 print(f"{digit:02d}", end="")
             else:
                 print(digit, end="")
+
+        elif t.isspace():
+            print(t, end="")
+            
         elif t.isdigit():
             print("", end="")
+
         else:
             print(t, end=" ")
+    print()
     return
 
 def decipher(text):
@@ -63,4 +70,5 @@ def decipher(text):
             total = int(n+m)+ ord("A") - 1
             print(chr(total), end="")
         print(" ", end="")
+    print()
     return

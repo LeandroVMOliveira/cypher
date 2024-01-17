@@ -93,6 +93,12 @@ def hlp():
             result Fnnc axd
           
         A1Z26
+          Recive text(string) and replace letters to numbers based on their place index. Example:
+
+          text    I love you
+
+          result  09 12152205 251521
+
         Base64 ()
         Binary
         Hexadecimal
