@@ -69,10 +69,31 @@ def hlp():
     print("""
 -options    -- Show all the ciphers available:
           
-    Working:     
-        Caesar
+    Working:
+        Caesar(text, key)
+          the code receives text (string) and a key and then it shifts 
+          the alphabet according to the key. Example:
+
+            text Good work
+
+            key 1
+
+            result Hppe xpsl
+          
+            text interesting
+
+            key 15
+
+            result xcitgthixcv
+          
+          text Good bye
+
+            key -1
+
+            result Fnnc axd
+          
         A1Z26
-        Base64 (32, 64, 85)
+        Base64 ()
         Binary
         Hexadecimal
           
