@@ -54,6 +54,6 @@ Binary
 Hexadecimal
           
 On development:             
-        Vigenère cipher 2
-        Substitution cipher 1
-        Morse 3
+        Vigenère cipher 
+        Substitution cipher 
+        Morse 

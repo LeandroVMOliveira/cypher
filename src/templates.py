@@ -111,8 +111,8 @@ def keycheck(keycap: int) -> int:
             print("Insert a integer")
 
 
-def inputcheck(checker) -> str:
-    """Ensure tha only alphabetics letters are used"""
+def inputcheck(checker, text: str) -> str:
+    """Ensure that only specific input are used"""
     text = None
     while(True):
         test = True
@@ -122,4 +122,4 @@ def inputcheck(checker) -> str:
                 test = False
         if(test):
             return text
-        print("Insert only alphabetic letters")
+        print(text)

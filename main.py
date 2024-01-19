@@ -93,10 +93,9 @@ def hlp():
             result Fnnc axd
           
         A1Z26(text)
-          Recive text(string) and replace letters to numbers based on their place index. Example:
+          Recive text(string) and replace letters to numbers based on their place index, is'n. Example:
 
-          text    I love you
-
+          text         I love you
           result  09 12152205 251521
 
         Base64(ascii letters)
@@ -120,7 +119,24 @@ def hlp():
           
           when 3 bytes can't be formed a equal sign "=" is put in place.
 
-        Binary
+        Binary(text or numbers or hexadecimal)
+
+          takes an input and convert to binary or make it backwards according with ASCII table 
+          in case if are text, and making normal conversion case are other numeric based system.
+
+          Example:
+
+            input Stereo
+            result 01010011 01110100 01100101 01110010 01100101 01101111
+                       S        t        e        r        e       o
+            ASCII     83       116      101      114      101     111
+          
+          input    50
+          result 110010
+
+          input        f7a
+          result   111101111010
+
         Hexadecimal
           
     On development:             

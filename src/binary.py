@@ -34,7 +34,7 @@ def cipher():
     data = templates.numcheck(1,4)
             
     if data == 1:
-        text = templates.inputcheck(templates.BASEALPHABET)
+        text = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
         for t in text:
             t = int(ord(t))
             t = bin(t)[2:]
@@ -43,7 +43,7 @@ def cipher():
         print()
         return
     elif data == 2:
-        number = templates.inputcheck(templates.DIGITS)
+        number = templates.inputcheck(templates.DIGITS, "Insert positives integers only")
         number = int(number)
         number = bin(number)[2:]
         number = int(number)
@@ -52,12 +52,13 @@ def cipher():
         return
     elif data == 3:
         hashdata = list()
-        hexa = templates.inputcheck(templates.HEXDECIMAL)
+        hexa = templates.inputcheck(templates.HEXDECIMAL, "Insert hexadecimal numbers only")
         hexa = hexa.strip()
         hashdata = hexa.split(" ")
         for h in hashdata:
-            h = int("0x" + h, base=2)
+            h = int("0x" + h, base=16)
             print(bin(h)[2:], end=" ")
+        print()
         return
     else:
         return
@@ -76,7 +77,7 @@ def decipher():
             
     if data == 1:
         hashdata = list()
-        text = templates.inputcheck(templates.BINARY)
+        text = templates.inputcheck(templates.BINARY, "Insert binary numbers only")
         text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
@@ -85,7 +86,7 @@ def decipher():
         return
     elif data == 2:
         hashdata = list()
-        text = templates.inputcheck(templates.BINARY)
+        text = templates.inputcheck(templates.BINARY, "Insert binary numbers only")
         text = text.strip()
         hashdata = text.split(" ")
         for h in hashdata:
@@ -93,7 +94,7 @@ def decipher():
         print()
         return
     elif data == 3:
-        bina = templates.inputcheck(templates.BINARY)
+        bina = templates.inputcheck(templates.BINARY, "Insert binary numbers only")
         bina = int(bina, base=2)
         print(hex(bina)[2:])
         return
