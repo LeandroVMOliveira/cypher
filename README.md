@@ -50,8 +50,33 @@ from a to z lower and upper, 0 to 9, "+" and "/"
           
 when 3 bytes can't be formed a equal sign "=" is put in place.
 
-Binary
-Hexadecimal
+Binary(text or numbers or hexadecimal)
+
+      takes an input and convert to binary or make it backwards according with ASCII table 
+      in case if are text, and making normal conversion case are other numeric based system.
+
+      Example:
+
+        input Stereo
+        result 01010011 01110100 01100101 01110010 01100101 01101111
+                   S        t        e        r        e       o
+        ASCII     83       116      101      114      101     111
+          
+      input    50
+      result 110010
+
+      input        f7a
+      result   111101111010
+
+    Hexadecimal(binary or integer)
+      convert hexadecimal to binary an integers
+      Example:
+
+        input   75  (base 10)
+        result  4b  (base 16)
+          
+        input   1000101 (base 2)
+        result     45   (base 16)
           
 On development:             
         Vigenère cipher 

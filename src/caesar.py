@@ -22,7 +22,7 @@ def main() -> int:
     if mode == 1 or mode == 2:
         
         key = templates.keycheck(26)
-        plaintext = templates.inputcheck(templates.ALPHANUMERIC)
+        plaintext = templates.inputcheck(templates.ALPHANUMERIC, "Insert alphanumeric characters only")
 
         if mode == 1:
             cipher(key, plaintext)
@@ -32,7 +32,7 @@ def main() -> int:
             return 0
     elif mode == 3:
         key = range(0,26)
-        plaintext = templates.inputcheck(templates.ALPHANUMERIC)
+        plaintext = templates.inputcheck(templates.ALPHANUMERIC, "Insert alphanumeric characters only")
         for k in key:
             cipher(k,plaintext)
         return 0

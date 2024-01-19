@@ -35,17 +35,18 @@ def cipher():
             
     if data == 1:
         hashdata = list()
-        bina = templates.inputcheck(templates.BINARY)
+        bina = templates.inputcheck(templates.BINARY, "Insert binary numbers only")
         hashdata = bina.split(" ")
         for h in hashdata:
             print(hex(int(h, base=2))[2:])
         return
     elif data == 2:
         hashdata = list()
-        number = templates.inputcheck(templates.DIGITS)
+        number = templates.inputcheck(templates.DIGITS, "Insert positives integers only")
         hashdata = number.split(" ")
         for h in hashdata:
-            print(hex(int(h, base=2))[2:])
+            print(hex(int(h))[2:])
+        print()
         return
     else:
         return
@@ -61,7 +62,7 @@ def decipher():
             
     if data == 1:
         hashdata = list()
-        hexa = templates.inputcheck(templates.HEXDECIMAL)
+        hexa = templates.inputcheck(templates.HEXDECIMAL, "Insert hexadecimal numbers only")
         hexa = hexa.strip()
         hashdata = hexa.split(" ")
         for h in hashdata:
@@ -70,7 +71,7 @@ def decipher():
         return
     elif data == 2:
         hashdata = list()
-        hexa = templates.inputcheck(templates.HEXDECIMAL)
+        hexa = templates.inputcheck(templates.HEXDECIMAL, "Insert hexadecimal numbers only")
         hexa = hexa.strip()
         hashdata = hexa.split(" ")
         for h in hashdata:

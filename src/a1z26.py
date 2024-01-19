@@ -18,10 +18,10 @@ def main():
          \n")
     mode = templates.numcheck(1,3)
     if mode == 1:
-        text = templates.inputcheck(templates.BASEALPHABET)
+        text = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
         cipher(text)
     elif mode == 2:
-        digits = templates.inputcheck(templates.A1Z26)
+        digits = templates.inputcheck(templates.A1Z26, "Insert numbers from 01 to 26")
         decipher(digits)
     return 0
 

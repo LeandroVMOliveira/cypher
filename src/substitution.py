@@ -19,7 +19,7 @@ def main():
         cipheralphabet = input("insert 26 caracters: ") + " "
         
         if len(set(cipheralphabet)) == len(cipheralphabet):
-            plaintext = templates.inputcheck(templates.BASEALPHABET)
+            plaintext = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
             table = str.maketrans(templates.ALPHABETUPPER + " ", cipheralphabet)
             print(f" {plaintext.translate(table)}")
         else:
@@ -27,7 +27,7 @@ def main():
 
     elif mode == 2:
         cipheralphabet = input("insert 26 caracters: ") + " "
-        plaintext = templates.inputcheck(templates.BASEALPHABET)
+        plaintext = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
         table = str.maketrans(cipheralphabet, templates.ALPHABETUPPER + " ")
         print(f" {plaintext.translate(table)}")
 

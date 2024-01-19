@@ -69,75 +69,83 @@ def hlp():
     print("""
 -options    -- Show all the ciphers available:
           
-    Working:
-        Caesar(text, key)
-          the code receives text (string) and a key and then it shifts 
-          the alphabet according to the key. Example:
+    Caesar(text, key)
+      the code receives text (string) and a key and then it shifts 
+      the alphabet according to the key. Example:
 
-            text Good work
+        text Good work
 
-            key 1
+        key 1
 
-            result Hppe xpsl
+        result Hppe xpsl
           
-            text interesting
+        text interesting
 
-            key 15
+        key 15
 
-            result xcitgthixcv
+        result xcitgthixcv
           
-          text Good bye
+      text Good bye
 
-            key -1
+        key -1
 
-            result Fnnc axd
+        result Fnnc axd
           
-        A1Z26(text)
-          Recive text(string) and replace letters to numbers based on their place index, is'n. Example:
+    A1Z26(text)
+      Recive text(string) and replace letters to numbers based on their place index, is'n. Example:
 
-          text         I love you
-          result  09 12152205 251521
+      text         I love you
+      result  09 12152205 251521
 
-        Base64(ascii letters)
-          receive an input(everything on ascii table) and makes some kind of conversion,
-          first the string is converted to binary where every character is 8 bits or one byte
+    Base64(ascii letters)
+      receive an input(everything on ascii table) and makes some kind of conversion,
+      first the string is converted to binary where every character is 8 bits or one byte
 
-          01000010 01111001 01100101
-              B        y       e
+      01000010 01111001 01100101
+          B        y       e
           
-          then the binary string is splited 3 bytes each just like the example above, and anothe
-          spit it's made for each 6 bits
+      then the binary string is splited 3 bytes each just like the example above, and anothe
+      spit it's made for each 6 bits
  
-          010000 100111 100101 100101
-             Q     n      l      l
+      010000 100111 100101 100101
+         Q     n      l      l
           
-          and the 4 binary sets are converted to numbers that are indexes on Base64 "alphabet" that go
-          from a to z lower and upper, 0 to 9, "+" and "/"
+      and the 4 binary sets are converted to numbers that are indexes on Base64 "alphabet" that go
+      from a to z lower and upper, 0 to 9, "+" and "/"
 
-          010010 000110 1001  None
-             S     G      k     =
+      010010 000110 1001  None
+         S     G      k     =
           
-          when 3 bytes can't be formed a equal sign "=" is put in place.
+      when 3 bytes can't be formed a equal sign "=" is put in place.
 
-        Binary(text or numbers or hexadecimal)
+    Binary(text or numbers or hexadecimal)
 
-          takes an input and convert to binary or make it backwards according with ASCII table 
-          in case if are text, and making normal conversion case are other numeric based system.
+      takes an input and convert to binary or make it backwards according with ASCII table 
+      in case if are text, and making normal conversion case are other numeric based system.
 
-          Example:
+      Example:
 
-            input Stereo
-            result 01010011 01110100 01100101 01110010 01100101 01101111
-                       S        t        e        r        e       o
-            ASCII     83       116      101      114      101     111
+        input Stereo
+        result 01010011 01110100 01100101 01110010 01100101 01101111
+                   S        t        e        r        e       o
+        ASCII     83       116      101      114      101     111
           
-          input    50
-          result 110010
+      input    50
+      result 110010
 
-          input        f7a
-          result   111101111010
+      input        f7a
+      result   111101111010
 
-        Hexadecimal
+    Hexadecimal(binary or integer)
+      convert hexadecimal to binary an integers
+      Example:
+
+        input   75  (base 10)
+        result  4b  (base 16)
+          
+        input   1000101 (base 2)
+        result     45   (base 16)
+
           
     On development:             
         Vigenère cipher 2
