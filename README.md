@@ -52,15 +52,15 @@ when 3 bytes can't be formed a equal sign "=" is put in place.
 
 Binary(text or numbers or hexadecimal)
 
-      takes an input and convert to binary or make it backwards according with ASCII table 
-      in case if are text, and making normal conversion case are other numeric based system.
+takes an input and convert to binary or make it backwards according with ASCII table 
+in case if are text, and making normal conversion case are other numeric based system.
 
-      Example:
+Example:
 
-        input Stereo
-        result 01010011 01110100 01100101 01110010 01100101 01101111
-                   S        t        e        r        e       o
-        ASCII     83       116      101      114      101     111
+    input Stereo
+    result 01010011 01110100 01100101 01110010 01100101 01101111
+               S        t        e        r        e       o
+    ASCII     83       116      101      114      101     111
           
       input    50
       result 110010
@@ -68,8 +68,8 @@ Binary(text or numbers or hexadecimal)
       input        f7a
       result   111101111010
 
-    Hexadecimal(binary or integer)
-      convert hexadecimal to binary an integers
+Hexadecimal(binary or integer)
+      convert hexadecimal to binary integers
       Example:
 
         input   75  (base 10)
