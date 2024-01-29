@@ -175,11 +175,12 @@ def lentest(keys:int, error_mensage):
         test = False
     if not text.isalpha():
         test = False
+    print(text)
     if(test):
         for t in text:
-            if t.isupper:
+            if t.isupper():
                 result.append(ord(t) - ord("A") + 1)
-            if t.islower:
+            elif t.islower():
                 result.append(ord(t) - ord("a") + 1)
         return result
     print(error_mensage)

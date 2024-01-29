@@ -16,9 +16,9 @@ def main():
         plaintext = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
         keys = templates.lentest(len(plaintext), "Invalid input")
         ciphertext = ""
-        for t, k in zip(plaintext, keys):
-            ciphertext += caesar.cipher(k,t)
-            print(ciphertext)
+        for i in range(len(plaintext)):
+            ciphertext += caesar.cipher(keys[i],plaintext[i])
+        print(ciphertext)
         
     elif mode == 2:
         ciphertext = templates.inputcheck(templates.BASEALPHABET, "Insert alphabetic letters only")
