@@ -16,7 +16,7 @@ def main() -> int:
          \n [4] Exit\
         \n")
     
-    mode = templates.numcheck(1,3)
+    mode = templates.numcheck(1,4)
     key: int = None
     plaintext: str = None
     if mode == 1 or mode == 2:

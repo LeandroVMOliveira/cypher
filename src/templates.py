@@ -147,5 +147,22 @@ def morsedeconv(ciphertext:str) -> str:
         except(ValueError):
             print("invalid code")
             return result
-        
     return result
+
+def lencheck(error_mensage):
+    "Ensures"
+    while(True):
+        test = True
+        text = input("Insert the new alphabet(26 characters): ")
+        if len(text) != 26:
+            test = False
+        if len(text) != len(set(text)):
+            test = False
+        if not text.isalpha():
+            test = False
+        if(test):
+            text = text.lower()
+            text += text.upper()
+            text += " "
+            return text
+        print(error_mensage)

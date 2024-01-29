@@ -3,7 +3,7 @@ from src import templates
 def main():
     """Template for base code/decode method"""
     mode = None
-    print("Welcome to ... Cipher/Decipher!\
+    print("Welcome to morse Cipher/Decipher!\
          \n\
          \n [1] cipher\
          \n [2] Decipher\
