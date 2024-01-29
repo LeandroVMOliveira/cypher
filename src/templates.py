@@ -48,14 +48,13 @@ DIGITS = string.digits + " "
 
 BINARY = ["1", "0", " "]
 
+MORSE = [".", "-", " "]
+
 ALPHABETLOWER = string.ascii_lowercase
 ALPHABETUPPER = string.ascii_uppercase
 BASEALPHABET = ALPHABETLOWER + ALPHABETUPPER + " "
 ALPHANUMERIC = ALPHABETLOWER + ALPHABETUPPER + DIGITS + " "
 
-A1Z26 = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"
-        , "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"
-        , "21", "22", "23", "24", "25", "26"]
 
 morse = {"A" : ".-", "B" : "-...", "C" : "-.-.", "D" : "-..",
         "E" : ".", "F" : "..-.", "G" : "--.", "H" : "....",
@@ -123,3 +122,30 @@ def inputcheck(checker, text: str) -> str:
         if(test):
             return text
         print(text)
+        
+def morseconv(plaintext: str) -> str:
+    "converts alphanumeric into morse"
+    result = ""
+    for s in plaintext:
+        if s.isalpha():
+            result += morse[s.upper()] + " "
+        elif s.isdigit:
+            result += morse[s] + " "
+        else:
+            result += s
+    return result
+
+def morsedeconv(ciphertext:str) -> str:
+    "converts morse into alphanumeric"
+    result = ""
+    data = []
+    data = ciphertext.split(" ")
+    
+    for d in data:
+        try:
+            result += list(morse.keys())[list(morse.values()).index(d)]
+        except(ValueError):
+            print("invalid code")
+            return result
+        
+    return result
