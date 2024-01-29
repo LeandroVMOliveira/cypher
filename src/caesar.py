@@ -25,10 +25,12 @@ def main() -> int:
         plaintext = templates.inputcheck(templates.ALPHANUMERIC, "Insert alphanumeric characters only")
 
         if mode == 1:
-            cipher(key, plaintext)
+            result = cipher(key, plaintext)
+            print(f"Key {key}: {result}")
             return 0
         else:
-            decipher(key, plaintext)
+            result = decipher(key, plaintext)
+            print(f"Key {key}: {result}")
             return 0
     elif mode == 3:
         key = range(0,26)
@@ -46,8 +48,8 @@ def cipher(key, text):
     alphabetshift = alphabetshiftlower + alphabetshiftupper + templates.DIGITS + " "
     basealphabet = templates.ALPHANUMERIC
     table = str.maketrans(basealphabet, alphabetshift)
-    print(f"Key {key}: {text.translate(table)}")
-    return
+    result = text.translate(table)
+    return result
 
 def decipher(key, text):
     """Takes a key and a ciphertext to generate the plaintext"""
@@ -56,5 +58,5 @@ def decipher(key, text):
     alphabetshift = alphabetshiftlower + alphabetshiftupper + " "
     basealphabet = templates.ALPHANUMERIC
     table = str.maketrans(alphabetshift, basealphabet)
-    print(f"Key {key}: {text.translate(table)}")
-    return
+    result = text.translate(table)
+    return result

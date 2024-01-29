@@ -166,3 +166,21 @@ def lencheck(error_mensage):
             text += " "
             return text
         print(error_mensage)
+        
+def lentest(keys:int, error_mensage):
+    test = True
+    text = input(f"Insert the keys({keys} characters): ")
+    result = []
+    if len(text) != keys:
+        test = False
+    if not text.isalpha():
+        test = False
+    if(test):
+        for t in text:
+            if t.isupper:
+                result.append(ord(t) - ord("A") + 1)
+            if t.islower:
+                result.append(ord(t) - ord("a") + 1)
+        return result
+    print(error_mensage)
+    
