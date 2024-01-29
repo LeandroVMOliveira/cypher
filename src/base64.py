@@ -23,9 +23,9 @@ def main():
     return 0
 
 def cipher():
-    """Template for base code/decode method"""
+    """Cipher for base32, base64 and base 85"""
     mode = None
-    print("Welcome to ... Cipher/Decipher!\
+    print("Select the base type\
          \n\
          \n [1] Base32\
          \n [2] Base64\
@@ -55,9 +55,9 @@ def cipher():
     return 0
     
 def decipher():
-    """Template for base code/decode method"""
+    """Decipher for base32, base64 and base 85"""
     mode = None
-    print("Welcome to ... Cipher/Decipher!\
+    print("Select the base type\
          \n\
          \n [1] Base32\
          \n [2] Base64\

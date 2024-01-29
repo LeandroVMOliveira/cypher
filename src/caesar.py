@@ -1,5 +1,3 @@
-"""The base to form the cipher"""
-
 
 from src import templates
 

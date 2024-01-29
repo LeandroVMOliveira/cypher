@@ -18,7 +18,7 @@ def main():
     elif mode == 2:
         decipher()
     elif mode == 3:
-        ...
+        return
     
     return 0
 

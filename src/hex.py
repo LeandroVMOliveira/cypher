@@ -19,7 +19,7 @@ def main():
     elif mode == 2:
         decipher()
     elif mode == 3:
-        ...
+        return
     
     return 0
 
@@ -51,7 +51,7 @@ def cipher():
     else:
         return
 def decipher():
-    """Takes a hexadecimal to convert to a data type option """
+    """Takes a hexadecimal to convert to a data type option"""
     print("Select the data type\
          \n\
          \n [1] binary\

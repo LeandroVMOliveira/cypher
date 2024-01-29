@@ -1,4 +1,4 @@
-"A1Z26 Encoder/Decoder ..."
+"A1Z26 Encoder/Decoder"
 
 from src import templates
 
