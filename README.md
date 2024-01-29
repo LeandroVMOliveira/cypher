@@ -90,7 +90,7 @@ First, the keys are converted to numbers as we used on A1Z26
             19 16 05 01 18
 So, we shift the corresponding letter by the key
 
-              A       u        q       m       g
+              Z       t        p       l       f
             H + 19  e + 16   l + 05  l + 01  o + 18
 
             result Auqmg
