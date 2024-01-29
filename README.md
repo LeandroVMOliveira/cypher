@@ -77,8 +77,23 @@ Hexadecimal(binary or integer)
           
         input   1000101 (base 2)
         result     45   (base 16)
-          
-On development:             
-        Vigenère cipher 
+                  
+Vigenère cipher (keys: str, plaintext: str)
+    takes two strings one is the plaintext and the other is the key to make the shift on the characters
+    Example:
+
+            input  Hello (plaintext)
+                   Spear (keys)
+First, the keys are converted to numbers as we used on A1Z26
+
+            S  p  e  a  r
+            19 16 05 01 18
+So, we shift the corresponding letter by the key
+
+              A       u        q       m       g
+            H + 19  e + 16   l + 05  l + 01  o + 18
+
+            result Auqmg
+            
         Substitution cipher 
         Morse 
